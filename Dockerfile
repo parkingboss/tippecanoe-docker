@@ -32,7 +32,4 @@ RUN mkdir -p /tmp/tippecanoe-src && \
 USER cartoboss
 
 # Use tini to prevent zombie processes, etc. and to not require `--init` on `docker run`
-ENTRYPOINT [ "/sbin/tini", "--", "tippecanoe" ]
-
-# By default, just run --help
-CMD [ "--help" ]
+ENTRYPOINT [ "tini", "--", "tippecanoe" ]
